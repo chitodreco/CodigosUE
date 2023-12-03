@@ -14,8 +14,11 @@ public class Ejercicio7_Arrays {
     public static void main(String[] args) {
 
         String[] palabras = new String[10];
+        int[] longPalabra = new int[10];
         Scanner scanner = new Scanner(System.in);
         int contadorLetras = 0;
+        int tamano;
+        int maximo = 0;
 
         for (int i = 0; i < palabras.length; i++) {
             System.out.println("Introduzca una palabra: ");
@@ -41,8 +44,27 @@ public class Ejercicio7_Arrays {
         }
         System.out.println("El número total de letras son: "+contadorLetras);
 
-        double media = (double)(contadorLetras / palabras.length);
-        System.out.printf("La media de letras entres todas las palabras es: "+media);
+        double media = ((double) contadorLetras / palabras.length);
+        System.out.printf("La media de letras entres todas las palabras es %.2f",media);
 
+        System.out.println();
+        System.out.println();
+
+        for (int i = 0; i < palabras.length; i++) {
+            for (int j = 0; j < longPalabra.length; j++) {
+                tamano = palabras[i].length();
+                longPalabra[j] = tamano;
+            }
+        }
+        for (int i = 0; i < longPalabra.length; i++) {
+            if (longPalabra[i] > maximo ){
+                maximo = longPalabra[i];
+            }
+        }
+        for (int i = 0; i < palabras.length; i++) {
+            if (maximo = palabras[i].length()){
+                
+            }
+        }
     }
 }
