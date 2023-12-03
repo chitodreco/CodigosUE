@@ -15,7 +15,7 @@ public class Ejercicio7_Arrays {
 
         String[] palabras = new String[10];
         Scanner scanner = new Scanner(System.in);
-
+        int contadorLetras = 0;
 
         for (int i = 0; i < palabras.length; i++) {
             System.out.println("Introduzca una palabra: ");
@@ -36,9 +36,13 @@ public class Ejercicio7_Arrays {
 
         System.out.println();
 
-        for (int i = 0; i < palabras.length; i++) {
-            palabras[i] = 
+        for (String item:palabras) {
+            contadorLetras += item.length();
         }
+        System.out.println("El número total de letras son: "+contadorLetras);
+
+        double media = (double)(contadorLetras / palabras.length);
+        System.out.printf("La media de letras entres todas las palabras es: "+media);
 
     }
 }
