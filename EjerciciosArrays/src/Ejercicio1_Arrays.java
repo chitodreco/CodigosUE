@@ -16,8 +16,9 @@ public class Ejercicio1_Arrays {
             pedido = scanner.nextInt();
             numeros[i] = pedido;
         }
-        for (int item : numeros) {
-            System.out.print(item + " ");
+        for (int i = 0; i < numeros.length; i++) {
+            System.out.println(i + "- " + numeros[i] + " ");
+        }
         }
     }
-}
+
