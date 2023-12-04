@@ -60,15 +60,15 @@ public class Ejercicio7_Arrays {
                 if (longPalabra[i] > maximo ) {
                     maximo = longPalabra[i];
                 }
-                if (tamano < longPalabra[i]) {
-                    minimo = longPalabra[i];
-                }
             }
         }
+
+
         for (int i = 0; i < palabras.length; i++) {
             if (palabras[i].length() == maximo){
                 System.out.println("La palabra más larga es: "+palabras[i]);
-            }if ( palabras[i].length() == minimo) {
+            }
+            if ( palabras[i].length() == minimo) {
                 System.out.println("La palabra más pequeña es: "+palabras[i]);
             }
 
