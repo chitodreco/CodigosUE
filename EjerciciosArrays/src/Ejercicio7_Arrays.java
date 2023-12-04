@@ -19,6 +19,7 @@ public class Ejercicio7_Arrays {
         int contadorLetras = 0;
         int tamano;
         int maximo = 0;
+        int minimo = 0;
 
         for (int i = 0; i < palabras.length; i++) {
             System.out.println("Introduzca una palabra: ");
@@ -30,10 +31,11 @@ public class Ejercicio7_Arrays {
             System.out.print(item + " ");
         }
         System.out.println();
+        System.out.println();
 
         int aleatorio = (int) (Math.random()*10);
         for (String item:palabras) {
-            System.out.println(palabras[aleatorio]);
+            System.out.println("La palabra al azar es: "+palabras[aleatorio]);
             break;
         }
 
@@ -50,21 +52,27 @@ public class Ejercicio7_Arrays {
         System.out.println();
         System.out.println();
 
+
         for (int i = 0; i < palabras.length; i++) {
             for (int j = 0; j < longPalabra.length; j++) {
                 tamano = palabras[i].length();
                 longPalabra[j] = tamano;
-            }
-        }
-        for (int i = 0; i < longPalabra.length; i++) {
-            if (longPalabra[i] > maximo ){
-                maximo = longPalabra[i];
+                if (longPalabra[i] > maximo ) {
+                    maximo = longPalabra[i];
+                }
+                if (tamano < longPalabra[i]) {
+                    minimo = longPalabra[i];
+                }
             }
         }
         for (int i = 0; i < palabras.length; i++) {
-            if (maximo = palabras[i].length()){
-                
+            if (palabras[i].length() == maximo){
+                System.out.println("La palabra más larga es: "+palabras[i]);
+            }if ( palabras[i].length() == minimo) {
+                System.out.println("La palabra más pequeña es: "+palabras[i]);
             }
+
         }
+
     }
 }
