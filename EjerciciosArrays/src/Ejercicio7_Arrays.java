@@ -19,7 +19,6 @@ public class Ejercicio7_Arrays {
         int contadorLetras = 0;
         int tamano;
         int maximo = 0;
-        int minimo = 0;
 
         for (int i = 0; i < palabras.length; i++) {
             System.out.println("Introduzca una palabra: ");
@@ -52,15 +51,17 @@ public class Ejercicio7_Arrays {
         System.out.println();
         System.out.println();
 
+        int minimo = palabras[0].length();
 
-        for (int i = 0; i < palabras.length; i++) {
-            for (int j = 0; j < longPalabra.length; j++) {
+        for (int i = 1; i < palabras.length; i++) {
                 tamano = palabras[i].length();
-                longPalabra[j] = tamano;
+                longPalabra[i] = tamano;
                 if (longPalabra[i] > maximo ) {
                     maximo = longPalabra[i];
                 }
-            }
+                if (longPalabra[i] < minimo){
+                    minimo = longPalabra[i];
+                }
         }
 
 
