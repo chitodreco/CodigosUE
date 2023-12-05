@@ -39,7 +39,11 @@ public class Ejercicio1_ArrayMulti {
             suma += array[i];
         }
         System.out.println(suma);
-        System.out.println();
+
+
+        double media = (double) suma / array.length;
+        System.out.printf("La media es %.2f",media);
+
     }
 
 }
