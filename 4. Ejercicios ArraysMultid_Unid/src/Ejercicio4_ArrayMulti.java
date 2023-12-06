@@ -40,6 +40,19 @@ public class Ejercicio4_ArrayMulti {
         for (int item : array){
             System.out.print(item + " ");
         }
+
+        System.out.println();
+
+        int priPos = array[0];
+
+        for (int i = 0; i < array.length - 1; i++) {
+            array[i] = array[i + 1];
+        }
+        array[array.length - 1] = priPos;
+
+        for (int item : array){
+            System.out.print(item + " ");
+        }
     }
 
 }
