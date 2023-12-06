@@ -38,35 +38,65 @@ public class ejercicio5_ArrayMulti {
         Scanner scanner = new Scanner(System.in);
         System.out.println("1. Incrementa en 1 los vales pares o decrementa en 1 los impares");
         System.out.println("2. Duplicar los valores positivos menores que 5");
+        System.out.println("3. Sumar a cada valor un valor entero aleatorio entre -5 y 5.");
+        System.out.println("4. Mover los datos una posición hacia la derecha. El último pasa al primero");
+        System.out.println("5. Intercambiar el primero con el segundo, el tercero con el cuarto... y el penúltimo con el último.");
         System.out.println();
         System.out.println("Introduce la opción que quieras llevar a cabo: ");
         int numero = scanner.nextInt();
 
         switch (numero) {
             case 1:
-            for (int i = 0; i < array.length; i++) {
-                if ((array[i] % 2) == 0) {
-                    array[i] = array[i] + 1;
-                } else {
-                    array[i] = array[i] - 1;
+                for (int i = 0; i < array.length; i++) {
+                    if ((array[i] % 2) == 0) {
+                        array[i] = array[i] + 1;
+                    } else {
+                        array[i] = array[i] - 1;
+                    }
                 }
-            }
-            for (int item : array) {
-                System.out.print(item + ", ");
-            }
-            break;
+                for (int item : array) {
+                    System.out.print(item + ", ");
+                }
+                break;
 
             case 2:
-
-            for (int i = 0; i < array.length; i++) {
-                if ((array[i] < 5 && array[i] > 0)) {
-                    array[i] = array[i] * 2;
+                for (int i = 0; i < array.length; i++) {
+                    if ((array[i] < 5 && array[i] > 0)) {
+                        array[i] = array[i] * 2;
+                    }
                 }
-            }
-            for (int item : array) {
-                System.out.print(item + ", ");
-            }
-            break;
+                for (int item : array) {
+                    System.out.print(item + ", ");
+                }
+                break;
+
+            case 3:
+                for (int i = 0; i < array.length; i++) {
+                    array[i] = (int) (array[i] + Math.random()*11 -5);
+                }
+                for (int item : array) {
+                    System.out.print(item + ", ");
+                }
+                break;
+
+            case 4:
+                int ultPos = array[9];
+                for (int i = array.length - 1; i > 0; i--) {
+                    array[i] = array[i - 1];
+                }
+                array[0] = ultPos;
+
+                for (int item : array) {
+                    System.out.print(item + ", ");
+                }
+                break;
+
+            case 5:
+                for (int i = 0; i < array.length; i++) {
+                    if (array[i]%2 != 0) {
+
+                    }
+                }
         }
 
     }
