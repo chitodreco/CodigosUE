@@ -42,6 +42,7 @@ public class ejercicio5_ArrayMulti {
         System.out.println("4. Mover los datos una posición hacia la derecha. El último pasa al primero");
         System.out.println("5. Intercambiar el primero con el segundo, el tercero con el cuarto... y el penúltimo con el último.");
         System.out.println("6. Invertir el array.");
+        System.out.println("7. Mostrar la posición del primer par y del último impar.");
         System.out.println();
         System.out.println("Introduce la opción que quieras llevar a cabo: ");
         int numero = scanner.nextInt();
@@ -113,6 +114,21 @@ public class ejercicio5_ArrayMulti {
                 for (int item : array) {
                     System.out.print(item + ", ");
                 }
+
+            case 7:
+                for (int i = 0; i < array.length; i++) {
+                    if (array[i] % 2 == 0) {
+                        System.out.println("El primer par está en la posición: " + i);
+                        break;
+                    }
+                }
+                for (int i = array.length - 1; i >= 0; i--) {
+                    if (array[i] % 2 != 0) {
+                        System.out.println("El último impar está en la posición: " + i);
+                        break;
+                    }
+                }
+
         }
 
     }
