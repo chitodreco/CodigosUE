@@ -41,6 +41,7 @@ public class ejercicio5_ArrayMulti {
         System.out.println("3. Sumar a cada valor un valor entero aleatorio entre -5 y 5.");
         System.out.println("4. Mover los datos una posición hacia la derecha. El último pasa al primero");
         System.out.println("5. Intercambiar el primero con el segundo, el tercero con el cuarto... y el penúltimo con el último.");
+        System.out.println("6. Invertir el array.");
         System.out.println();
         System.out.println("Introduce la opción que quieras llevar a cabo: ");
         int numero = scanner.nextInt();
@@ -102,6 +103,16 @@ public class ejercicio5_ArrayMulti {
                     System.out.print(item + ", ");
                 }
                 break;
+
+            case 6:
+                for (int i = 0; i < array.length - 5; i++) {
+                    int temporal = array[i];
+                    array[i] = array[array.length -1 - i];
+                    array[array.length - 1 - i] = temporal;
+                }
+                for (int item : array) {
+                    System.out.print(item + ", ");
+                }
         }
 
     }
