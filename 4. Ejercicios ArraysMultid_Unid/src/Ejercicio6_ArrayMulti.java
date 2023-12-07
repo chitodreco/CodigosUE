@@ -7,9 +7,20 @@
 //        y se guardará en el array del apartado 2
 //        - Imprimir por pantalla las palabras generadas
 
+import java.util.Scanner;
+
 public class Ejercicio6_ArrayMulti {
 
     public static void main(String[] args) {
-        
+
+        char[] letras = new char[]{'a','b','c','d','e','f','g','h','i','j','k','l','m','n','ñ','o','p','q','r','s','t','u','v','w','x','y','z'};
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Cuántas palabras quieres guardar: ");
+        int tamano = scanner.nextInt();
+
+        String[] palabra = new String[tamano];
+
+
     }
 }
