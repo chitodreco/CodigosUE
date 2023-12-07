@@ -92,22 +92,11 @@ public class ejercicio5_ArrayMulti {
                 break;
 
             case 5:
-                int [] impares = new int[5];
-                for (int i = 0; i < array.length; i++) {
-                    if (i%2 != 0){
-                    }
-                    impares[i] = 
-                }
 
-                for (int item : impares) {
-                    System.out.print(item + ", ");
-                }
-                System.out.println();
-
-                for (int i = 0; i < array.length; i++) {
-                    if (i%2 == 0) {
-                        array[i] = array[i + 1];
-                    }
+                for (int i = 0; i < array.length; i += 2) {
+                    int temporal = array[i];
+                    array[i] = array[i + 1];
+                    array[i + 1] = temporal;
                 }
                 for (int item : array) {
                     System.out.print(item + ", ");
