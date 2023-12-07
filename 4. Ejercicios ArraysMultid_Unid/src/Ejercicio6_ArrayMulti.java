@@ -19,7 +19,17 @@ public class Ejercicio6_ArrayMulti {
         System.out.println("Cuántas palabras quieres guardar: ");
         int tamano = scanner.nextInt();
 
-        String[] palabra = new String[tamano];
+        String[] palabras = new String[tamano];
+
+        for (int i = 0; i < palabras.length; i++) {
+            System.out.printf("Cuál es la longitud de la palabra %d: ",i + 1);
+            int longitud = scanner.nextInt();
+            palabras[i] = new String(new char[longitud]);
+        }
+
+        for (int i = 0; i < palabras.length; i++) {
+            
+        }
 
 
     }
