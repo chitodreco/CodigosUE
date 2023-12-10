@@ -24,27 +24,34 @@ public class Ejercicio7_ArrayMulti {
         System.out.println(palabraSeleccionada);
 
         char [] desglosePalabra = new char[palabraSeleccionada.length()];
-
         char letra;
+        int vidas = 10;
 
         for (int i = 0; i < palabraSeleccionada.length(); i++) {
+            letra = palabraSeleccionada.charAt(i);
+            desglosePalabra[i] = letra;
             System.out.print("_ ");
-            letra = desglosePalabra[i];
-            System.out.print(letra);
         }
-        System.out.println(desglosePalabra);
 
+        System.out.println();
 
-//        Scanner scanner = new Scanner(System.in);
-//        System.out.println("Introduzca una letra: ");
-//        String letra = scanner.next();
-//        boolean acierto = false;
-//
-//        for (int i = 0; i < palabraSeleccionada.length(); i++) {
-//            if (letra == palabraSeleccionada[i]){
-//
-//            }
-//        }
+        Scanner scanner = new Scanner(System.in);
+
+        while (vidas > 0) {
+
+            for (int i = 0; i < palabraSeleccionada.length(); i++) {
+                System.out.println("Introduzca una letra: ");
+                char intento = scanner.next().charAt(i);
+
+                if (intento == desglosePalabra[i]) {
+                    System.out.println("Existe");
+                } else {
+                    System.out.println("Esa letra no forma parte de la palabra");
+                    vidas--;
+                }
+
+            }
+        }
 
     }
 }
