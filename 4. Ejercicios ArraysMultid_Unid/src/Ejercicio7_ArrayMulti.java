@@ -24,13 +24,10 @@ public class Ejercicio7_ArrayMulti {
         System.out.println(palabraSeleccionada);
 
         char [] desglosePalabra = new char[palabraSeleccionada.length()];
-        char letra;
         int vidas = 10;
 
-        for (int i = 0; i < palabraSeleccionada.length(); i++) {
-            letra = palabraSeleccionada.charAt(i);
-            desglosePalabra[i] = letra;
-            System.out.print("_ ");
+        for (int i = 0; i < desglosePalabra.length; i++) {
+            desglosePalabra[i] = '_';
         }
 
         System.out.println();
@@ -39,9 +36,16 @@ public class Ejercicio7_ArrayMulti {
 
         while (vidas > 0) {
 
+            for (char item:desglosePalabra) {
+                System.out.print(item + " ");
+            }
+
+            System.out.println();
+
+            System.out.println("Introduzca una letra: ");
+            char intento = scanner.next().charAt(0);
+
             for (int i = 0; i < palabraSeleccionada.length(); i++) {
-                System.out.println("Introduzca una letra: ");
-                char intento = scanner.next().charAt(i);
 
                 if (intento == desglosePalabra[i]) {
                     System.out.println("Existe");
