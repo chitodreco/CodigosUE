@@ -10,11 +10,41 @@
 //        - Acierte la palabra
 //        - Me quede sin vidas
 
+import java.util.Scanner;
+
 public class Ejercicio7_ArrayMulti {
 
     public static void main(String[] args) {
 
-        String[] palabras = new String[]{"casa", "perro", "movil", "tele", "lapiz"};
-        
+        String[] palabras = new String[]{"casa", "perro", "movil", "tele", "lapiz", "madrid", "lorena"};
+
+
+        int aleatorio = (int) (Math.random()*palabras.length);
+        String palabraSeleccionada = palabras[aleatorio];
+        System.out.println(palabraSeleccionada);
+
+        char [] desglosePalabra = new char[palabraSeleccionada.length()];
+
+        char letra;
+
+        for (int i = 0; i < palabraSeleccionada.length(); i++) {
+            System.out.print("_ ");
+            letra = desglosePalabra[i];
+            System.out.print(letra);
+        }
+        System.out.println(desglosePalabra);
+
+
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.println("Introduzca una letra: ");
+//        String letra = scanner.next();
+//        boolean acierto = false;
+//
+//        for (int i = 0; i < palabraSeleccionada.length(); i++) {
+//            if (letra == palabraSeleccionada[i]){
+//
+//            }
+//        }
+
     }
 }
