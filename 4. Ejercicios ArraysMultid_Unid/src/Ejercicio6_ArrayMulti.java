@@ -24,20 +24,14 @@ public class Ejercicio6_ArrayMulti {
         for (int i = 0; i < palabras.length; i++) {
             System.out.printf("Cuál es la longitud de la palabra %d: ",i + 1);
             int longitud = scanner.nextInt();
-            palabras[i] = new String(new char[longitud]);
+            palabras[i] ="";
+
+            for (int j = 0; j < longitud; j++) {
+                int posicionLetras = (int) (Math.random()*letras.length);
+                palabras[i] += letras[posicionLetras];
+            }
             System.out.println(palabras[i]);
         }
-
-        for (int i = 0; i < palabras.length; i++) {
-            for (int j = 0; j < letras.length; j++) {
-               int posicionLetras = (int) (Math.random()*letras.length + 1);
-
-
-            }
-
-
-        }
-
 
     }
 }
