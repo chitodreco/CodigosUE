@@ -47,14 +47,17 @@ public class Ejercicio7_ArrayMulti {
 
             for (int i = 0; i < palabraSeleccionada.length(); i++) {
 
-                if (intento == desglosePalabra[i]) {
-                    System.out.println("Existe");
+                if (intento == palabraSeleccionada.charAt(i)) {
+                    desglosePalabra[i] = intento;
                 } else {
-                    System.out.println("Esa letra no forma parte de la palabra");
                     vidas--;
                 }
 
             }
+        }
+
+        if (vidas == 0){
+            System.out.println("Oops! Te has quedado sin vidas");
         }
 
     }
