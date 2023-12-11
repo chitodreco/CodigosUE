@@ -8,27 +8,11 @@ public class Cuadrado_Magico {
         int tamano = scanner.nextInt();
 
         int [][] cuadrado = new int[tamano][tamano];
-        int sumaColumnas = 0;
-        int numero;
-
 
         for (int i = 0; i < cuadrado.length; i++) {
-
-            boolean correcto;
             for (int j = 0; j < cuadrado[i].length; j++) {
-                correcto = true;
-                do {
-                    int sumaFilas = 0;
-                    numero = (int) (Math.random() * 10);
-                    cuadrado[i][j] = numero;
-                    sumaFilas += cuadrado[i][j];
-
-                    if (sumaFilas != 15) {
-                            correcto = false;
-                    }
-
-                } while (!correcto);
-
+                int numero = (int) (Math.random()*10);
+                cuadrado[i][j] = numero;
             }
         }
 
