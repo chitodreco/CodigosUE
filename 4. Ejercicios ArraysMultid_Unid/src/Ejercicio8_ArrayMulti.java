@@ -35,7 +35,6 @@ public class Ejercicio8_ArrayMulti {
         String[][] parejas = new String[participantes.length / 2][2];
         boolean [] participanteAsignado = new boolean[participantes.length];
 
-        boolean repetido;
         int aleatorio;
 
         for (int i = 0; i < parejas.length; i++) {
