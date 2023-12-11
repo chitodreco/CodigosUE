@@ -13,21 +13,22 @@ public class Cuadrado_Magico {
 
 
         for (int i = 0; i < cuadrado.length; i++) {
-            int sumaFilas = 0;
+
             boolean correcto;
             for (int j = 0; j < cuadrado[i].length; j++) {
                 correcto = true;
                 do {
+                    int sumaFilas = 0;
                     numero = (int) (Math.random() * 10);
                     cuadrado[i][j] = numero;
                     sumaFilas += cuadrado[i][j];
-                    for (int k = 0; k < j; k++) {
-                        if (sumaFilas == 15) {
-                            correcto = true;
-                        }
+
+                    if (sumaFilas != 15) {
+                            correcto = false;
                     }
-                } while (correcto);
-                cuadrado[i][j] = numero;
+
+                } while (!correcto);
+
             }
         }
 
