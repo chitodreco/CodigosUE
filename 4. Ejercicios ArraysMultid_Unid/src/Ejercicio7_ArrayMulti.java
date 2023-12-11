@@ -21,7 +21,6 @@ public class Ejercicio7_ArrayMulti {
 
         int aleatorio = (int) (Math.random()*palabras.length);
         String palabraSeleccionada = palabras[aleatorio];
-        System.out.println(palabraSeleccionada);
 
         char [] desglosePalabra = new char[palabraSeleccionada.length()];
         int vidas = 10;
@@ -44,20 +43,34 @@ public class Ejercicio7_ArrayMulti {
 
             System.out.println("Introduzca una letra: ");
             char intento = scanner.next().charAt(0);
+            boolean letraAcertada = false;
 
             for (int i = 0; i < palabraSeleccionada.length(); i++) {
 
                 if (intento == palabraSeleccionada.charAt(i)) {
                     desglosePalabra[i] = intento;
-                } else {
-                    vidas--;
+                    letraAcertada = true;
                 }
+            }
+            if (!letraAcertada) {
+                vidas--;
+            }
 
+            boolean palabraAcertada = true;
+            for (char item:desglosePalabra) {
+                if (item == '_'){
+                    palabraAcertada = false;
+                }
+            }
+
+            if(palabraAcertada){
+                System.out.println("Enhorabuena! Has acertado la palabra: "+palabraSeleccionada);
+                break;
             }
         }
 
         if (vidas == 0){
-            System.out.println("Oops! Te has quedado sin vidas");
+            System.out.println("Oops! Te has quedado sin vidas. La palabra era: "+palabraSeleccionada);
         }
 
     }
