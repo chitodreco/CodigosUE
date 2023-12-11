@@ -12,7 +12,7 @@ public class Ejercicio9_ArrayMulti {
 
     public static void main(String[] args) {
 
-        
+
 
     }
 }
