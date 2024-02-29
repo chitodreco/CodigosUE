@@ -26,11 +26,11 @@ public class Coche {
         System.out.println("Matricula: " +matricula);
         System.out.println("Velocidad: " +velocidad);
         System.out.println("Kilometros: "+km);
+        System.out.println();
     }
 
     public void acelerarCoche (){
         Scanner scanner = new Scanner(System.in);
-        System.out.println();
         System.out.println("Indique la velocidad a incrementar en el "+modelo+":");
         int nuevaVelocidad = scanner.nextInt();
 
