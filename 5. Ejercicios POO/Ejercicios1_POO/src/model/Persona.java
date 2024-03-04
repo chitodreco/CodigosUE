@@ -11,7 +11,15 @@
 //        - un constructor que permita crear una persona sin datos de entrada. Los inicializará todos a
 //        "datos por defecto", 1111111111X y 0 respectivamente
 
+//3. En la clase creada en el ejercicio 1 crear los siguientes métodos con la funcionalidad que se indica:
+//        - Un método que recibe por parámetros un número e incrementa la edad de la persona en el parámetro
+//        pasado por argumentos
+//        - Un método que calcule y devuelva el IMC. Para calcular el imc se aplica la siguiente
+//        formula IMC = peso / (altura * altura)
+
 package model;
+
+import java.util.Scanner;
 
 public class Persona {
 
@@ -47,6 +55,10 @@ public class Persona {
         this.dni = "111111111X";
     }
 
+    public Persona(String nombre, String apellido) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+    }
 
     public void mostrarDatos(){
 
@@ -56,6 +68,14 @@ public class Persona {
         System.out.println("Edad: "+edad);
         System.out.println("Altura: "+altura);
         System.out.println("Peso: "+peso);
+    }
+
+    public void incrementarEdad(int numero){
+        edad += numero;
+    }
+
+    public double calcularIMC(){
+        return (double) peso / Math.pow(altura,2);
     }
 
     public String getNombre() {

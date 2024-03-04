@@ -6,6 +6,16 @@
 //        - Mostrar los datos de todas las personas
 //        - Modificar la edad de todas las personas a 20
 
+//4. En la clase entrada creada en el ejercicio 2 crear los siguiente
+//        La persona que tiene todos los datos (p1) muestra por pantalla su IMC
+//        Según el IMC mostrado por pantalla, también se tendrá que mostrar por consola el estado físico
+//        de la persona. Para ello hay que tener en cuenta lo siguiente
+//        - Peso inferior al normal		Menos de 18.5
+//        - Normal		18.5 – 24.9
+//        - Peso superior al normal		25.0 – 29.9
+//        - Obesidad		Más de 30.0
+
+
 import model.Persona;
 
 import java.util.Scanner;
@@ -29,5 +39,27 @@ public class Entrada {
         Persona p1 = new Persona(nombre, apellido, dni, edad, peso, altura);
 
         p1.mostrarDatos();
+
+        Persona p2 = new Persona("Roberto", "Panizo"){};
+
+        Persona p3 = new Persona(){};
+
+//        p1.mostrarDatos();
+//        p2.mostrarDatos();
+//        p3.mostrarDatos();
+//
+//        p1.setEdad(20);
+//        p2.setEdad(20);
+//        p3.setEdad(20);
+//
+//        p1.mostrarDatos();
+//        p2.mostrarDatos();
+//        p3.mostrarDatos();
+//
+//        p1.incrementarEdad(10);
+//        p1.mostrarDatos();
+
+        double imc = p1.calcularIMC();
+       
     }
 }
