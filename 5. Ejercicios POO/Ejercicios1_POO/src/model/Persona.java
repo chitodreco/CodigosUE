@@ -25,7 +25,7 @@ import java.util.Scanner;
 
 public class Persona {
 
-    private String nombre, apellido, dni;
+    private String nombre, apellido, dni, genero;
     private int edad, peso;
     private double altura;
 
@@ -35,13 +35,14 @@ public class Persona {
         this.dni = "111111111X";
     }
 
-    public Persona(String nombre, String apellido, String dni, int edad, double altura, int peso) {
+    public Persona(String nombre, String apellido, String dni, int edad, double altura, int peso, String genero) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
         this.edad = edad;
         this.altura = altura;
         this.peso = peso;
+        this.genero = genero;
     }
 
     public Persona(String nombre, String apellido, String dni, int edad) {
@@ -70,6 +71,7 @@ public class Persona {
         System.out.println("Edad: "+edad);
         System.out.println("Altura: "+altura);
         System.out.println("Peso: "+peso);
+        System.out.println("Genero: "+genero);
     }
 
     public void incrementarEdad(int numero){
@@ -81,14 +83,30 @@ public class Persona {
         double IMC = peso / Math.pow(altura,2);
         System.out.printf("IMC: %.2f",+IMC);
         System.out.println();
-        if (IMC < 18.5) {
-            System.out.println("Peso inferior al normal");
-        } else if (IMC >= 18.5 && IMC <= 24.9){
-            System.out.println("Peso normal");
-        } else if (IMC >= 25.0 && IMC <= 29.9){
-            System.out.println("Peso superior al normal");
-        } else if (IMC >= 30.0){
-            System.out.println("Obesidad");
+        if (genero.equals("H")) {
+            if (IMC < 20) {
+                System.out.println("Peso inferior al normal");
+            } else if (IMC >= 20 && IMC < 27) {
+                System.out.println("Peso normal");
+            } else if (IMC >= 27 && IMC < 30) {
+                System.out.println("Peso superior al normal");
+            } else if (IMC >= 30.0 && IMC < 40) {
+                System.out.println("Obesidad");
+            } else if (IMC >= 40) {
+                System.out.println("Obesidad morbida");
+            }
+        }else{
+            if (IMC < 20) {
+                System.out.println("Peso inferior al normal");
+            } else if (IMC >= 20 && IMC <= 25) {
+                System.out.println("Peso normal");
+            } else if (IMC > 25.0 && IMC < 30) {
+                System.out.println("Peso superior al normal");
+            } else if (IMC >= 30.0 && IMC < 40) {
+                System.out.println("Obesidad");
+            } else if (IMC >= 40){
+                System.out.println("Obesidad morbida");
+            }
         }
     }
 

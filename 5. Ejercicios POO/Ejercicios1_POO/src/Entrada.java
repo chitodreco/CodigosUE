@@ -15,6 +15,13 @@
 //        - Peso superior al normal		25.0 – 29.9
 //        - Obesidad		Más de 30.0
 
+//5. Modifica el ejercicio anterior para que el IMC se pueda calcular según el genero de la persona. En este caso,
+//        para poder calcular el IMC según genero se utilizan las siguientes tablas
+//
+
+
+
+
 
 import model.Persona;
 
@@ -36,7 +43,9 @@ public class Entrada {
         double altura = scanner.nextDouble();
         System.out.println("Introduzca el peso de la persona: ");
         int peso = scanner.nextInt();
-        Persona p1 = new Persona(nombre, apellido, dni, edad, altura, peso);
+        System.out.println("Introduzca el genero (H/M): ");
+        String genero = scanner.next();
+        Persona p1 = new Persona(nombre, apellido, dni, edad, altura, peso, genero);
 
         p1.mostrarDatos();
 
