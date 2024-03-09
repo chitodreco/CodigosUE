@@ -17,6 +17,8 @@
 //        - Un método que calcule y devuelva el IMC. Para calcular el imc se aplica la siguiente
 //        formula IMC = peso / (altura * altura)
 
+
+
 package model;
 
 import java.util.Scanner;
@@ -24,8 +26,8 @@ import java.util.Scanner;
 public class Persona {
 
     private String nombre, apellido, dni;
-    private int edad, altura;
-    private double peso;
+    private int edad, peso;
+    private double altura;
 
     public Persona(){
         this.nombre = "por defecto";
@@ -33,7 +35,7 @@ public class Persona {
         this.dni = "111111111X";
     }
 
-    public Persona(String nombre, String apellido, String dni, int edad, int altura, double peso) {
+    public Persona(String nombre, String apellido, String dni, int edad, double altura, int peso) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
@@ -74,8 +76,20 @@ public class Persona {
         edad += numero;
     }
 
-    public double calcularIMC(){
-        return (double) peso / Math.pow(altura,2);
+    public void calcularIMC(){
+        //double alturaMetros = (double) altura / 100;
+        double IMC = peso / Math.pow(altura,2);
+        System.out.printf("IMC: %.2f",+IMC);
+        System.out.println();
+        if (IMC < 18.5) {
+            System.out.println("Peso inferior al normal");
+        } else if (IMC >= 18.5 && IMC <= 24.9){
+            System.out.println("Peso normal");
+        } else if (IMC >= 25.0 && IMC <= 29.9){
+            System.out.println("Peso superior al normal");
+        } else if (IMC >= 30.0){
+            System.out.println("Obesidad");
+        }
     }
 
     public String getNombre() {
@@ -110,7 +124,7 @@ public class Persona {
         this.edad = edad;
     }
 
-    public int getAltura() {
+    public double getAltura() {
         return altura;
     }
 
@@ -122,7 +136,7 @@ public class Persona {
         return peso;
     }
 
-    public void setPeso(double peso) {
+    public void setPeso(int peso) {
         this.peso = peso;
     }
 }

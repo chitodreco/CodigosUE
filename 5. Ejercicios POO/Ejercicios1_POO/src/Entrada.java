@@ -32,11 +32,11 @@ public class Entrada {
         String dni = scanner.next();
         System.out.println("Introduzca la edad de la persona: ");
         int edad = scanner.nextInt();
-        System.out.println("Introduzca el peso de la persona: ");
-        int peso = scanner.nextInt();
         System.out.println("Introduzca la altura de la persona: ");
         double altura = scanner.nextDouble();
-        Persona p1 = new Persona(nombre, apellido, dni, edad, peso, altura);
+        System.out.println("Introduzca el peso de la persona: ");
+        int peso = scanner.nextInt();
+        Persona p1 = new Persona(nombre, apellido, dni, edad, altura, peso);
 
         p1.mostrarDatos();
 
@@ -59,7 +59,7 @@ public class Entrada {
 //        p1.incrementarEdad(10);
 //        p1.mostrarDatos();
 
-        double imc = p1.calcularIMC();
-       
+        p1.calcularIMC();
+
     }
 }
