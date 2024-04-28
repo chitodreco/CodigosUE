@@ -1,6 +1,6 @@
 package model;
 
-public class Terror extends Libro{
+public final class Terror extends Libro{
 
     private String calificacion;
 

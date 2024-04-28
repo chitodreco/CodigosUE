@@ -1,6 +1,6 @@
 package model;
 
-public class Comedia extends Libro{
+public final class Comedia extends Libro{
 
     private String tipoHumor;
 

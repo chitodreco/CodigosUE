@@ -1,6 +1,6 @@
 package model;
 
-public class Ensayo extends Libro{
+public final class Ensayo extends Libro{
 
     private String genero;
 

@@ -2,8 +2,8 @@ package model;
 
 public class Libro {
 
-    private String autor, titulo, ISBN;
-    private int numPaginas;
+    private String autor, titulo;
+    private int numPaginas, ISBN;
 
     public void mostrarDatos(){
         System.out.println("autor = " + autor);
@@ -15,7 +15,7 @@ public class Libro {
     public Libro() {
     }
 
-    public Libro(String autor, String titulo, String ISBN, int numPaginas) {
+    public Libro(String autor, String titulo, int ISBN, int numPaginas) {
         this.autor = autor;
         this.titulo = titulo;
         this.ISBN = ISBN;
@@ -38,11 +38,11 @@ public class Libro {
         this.titulo = titulo;
     }
 
-    public String getISBN() {
+    public int getISBN() {
         return ISBN;
     }
 
-    public void setISBN(String ISBN) {
+    public void setISBN(int ISBN) {
         this.ISBN = ISBN;
     }
 

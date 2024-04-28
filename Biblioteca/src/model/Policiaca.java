@@ -1,6 +1,6 @@
 package model;
 
-public class Policiaca extends Libro{
+public final class Policiaca extends Libro{
     
     private String personajes;
 
