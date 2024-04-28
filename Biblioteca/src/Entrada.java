@@ -1,8 +1,5 @@
 import controller.Biblioteca;
-import model.Catalogo;
-import model.Libro;
 
-import java.util.Formatter;
 
 public class Entrada {
 
@@ -10,7 +7,8 @@ public class Entrada {
 
         Biblioteca biblioteca = new Biblioteca();
 
-        biblioteca.crearCatalogo(new Catalogo());
+        biblioteca.crearCatalogo(5);
+        biblioteca.agregarLibro();
 
     }
 }
