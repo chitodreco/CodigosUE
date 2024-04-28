@@ -14,8 +14,15 @@ public class Biblioteca <L extends Libro> {
         this.catalogo = new Catalogo(numLibros);
     }
 
-    public void agregarLibro(L Libro){
-        catalogo.agregarLibro(Libro);
+    public void mostrarDatosBiblio(){
+        System.out.println();
+        System.out.println("nombre = " + nombre);
+        System.out.println("director = " + director);
+        System.out.println();
+    }
+
+    public void agregarLibroCatalogo(L Libro){
+        catalogo.agregarLibro(libro);
     }
 
 

@@ -7,8 +7,8 @@ public class Entrada {
 
         Biblioteca biblioteca = new Biblioteca();
 
-        biblioteca.crearCatalogo(5);
-        biblioteca.agregarLibro();
+        biblioteca.crearCatalogo(4);
+        biblioteca.agregarLibroCatalogo();
 
     }
 }

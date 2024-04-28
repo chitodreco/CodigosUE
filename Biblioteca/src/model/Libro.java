@@ -2,19 +2,20 @@ package model;
 
 public abstract class Libro {
 
-    private String autor, titulo, ISBN;
+    private String autor, ISBN;
     private int numPaginas;
 
     public void mostrarDatos(){
         System.out.println("autor = " + autor);
-        System.out.println("titulo = " + titulo);
         System.out.println("ISBN = " + ISBN);
         System.out.println("numPaginas = " + numPaginas);
     }
 
-    public Libro(String autor, String titulo, String ISBN, int numPaginas) {
+    public Libro() {
+    }
+
+    public Libro(String autor, String ISBN, int numPaginas) {
         this.autor = autor;
-        this.titulo = titulo;
         this.ISBN = ISBN;
         this.numPaginas = numPaginas;
     }
@@ -27,13 +28,6 @@ public abstract class Libro {
         this.autor = autor;
     }
 
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
 
     public String getISBN() {
         return ISBN;
