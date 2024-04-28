@@ -13,8 +13,8 @@ public final class Terror extends Libro{
     public Terror() {
     }
 
-    public Terror(String autor, String titulo, String ISBN, int numPaginas, String calificacion) {
-        super(autor, titulo, ISBN, numPaginas);
+    public Terror(String autor, String ISBN, int numPaginas, String calificacion) {
+        super(autor, ISBN, numPaginas);
         this.calificacion = calificacion;
     }
 

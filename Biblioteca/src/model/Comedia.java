@@ -13,8 +13,8 @@ public final class Comedia extends Libro{
     public Comedia() {
     }
 
-    public Comedia(String autor, String titulo, String ISBN, int numPaginas, String tipoHumor) {
-        super(autor, titulo, ISBN, numPaginas);
+    public Comedia(String autor, String ISBN, int numPaginas, String tipoHumor) {
+        super(autor, ISBN, numPaginas);
         this.tipoHumor = tipoHumor;
     }
 

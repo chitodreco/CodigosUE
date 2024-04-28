@@ -13,8 +13,8 @@ public final class Policiaca extends Libro{
     public Policiaca() {
     }
 
-    public Policiaca(String autor, String titulo, String ISBN, int numPaginas, String personajes) {
-        super(autor, titulo, ISBN, numPaginas);
+    public Policiaca(String autor, String ISBN, int numPaginas, String personajes) {
+        super(autor, ISBN, numPaginas);
         this.personajes = personajes;
     }
 

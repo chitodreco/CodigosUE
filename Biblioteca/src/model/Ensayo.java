@@ -13,8 +13,8 @@ public final class Ensayo extends Libro{
     public Ensayo() {
     }
 
-    public Ensayo(String autor, String titulo, String ISBN, int numPaginas, String genero) {
-        super(autor, titulo, ISBN, numPaginas);
+    public Ensayo(String autor, String ISBN, int numPaginas, String genero) {
+        super(autor, ISBN, numPaginas);
         this.genero = genero;
     }
 
