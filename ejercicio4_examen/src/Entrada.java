@@ -10,21 +10,42 @@ public class Entrada {
 
 
         int intentos = 0;
-        for (int i = 0; i < 5; i++) {
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("Introduzca un número: ");
-            int numeroElegido = scanner.nextInt();
-            if (numeroElegido == numeroCaja){
-                System.out.println("Enhorabuena, has abierto la caja");
-                break;
-            } else {
-                intentos++;
-                if (intentos == 5){
-                    System.out.println("Caja bloqueada, has perdido la oportunidad");
-                    break;
-                }
-                System.out.println("Error, te quedan "+(5 - intentos)+" intentos");
+//        for (int i = 0; i < 5; i++) {
+//            Scanner scanner = new Scanner(System.in);
+//            System.out.println("Introduzca un número: ");
+//            int numeroElegido = scanner.nextInt();
+//            if (numeroElegido == numeroCaja){
+//                System.out.println("Enhorabuena, has abierto la caja");
+//                break;
+//            } else {
+//                intentos++;
+//                if (intentos == 5){
+//                    System.out.println("Caja bloqueada, has perdido la oportunidad");
+//                    break;
+//                }
+//                System.out.println("Error, te quedan "+(5 - intentos)+" intentos");
+//            }
+//        }
+
+        do {
+            for (int i = 0; i < 5; i++) {
+                Scanner scanner = new Scanner(System.in);
+                System.out.println("Introduzca un número: ");
+                int numeroElegido = scanner.nextInt();
+                    if (numeroElegido == numeroCaja){
+                        System.out.println("Enhorabuena, has abierto la caja");
+                        intentos = 5;
+                        break;
+                    } else{
+                        intentos++;
+                        if (intentos == 5){
+                            System.out.println("Caja bloqueada, has perdido la oportunidad");
+                            break;
+                        }
+                        System.out.println("Error, te quedan "+(5 - intentos)+" intentos");
+                    }
             }
-        }
+
+        } while (intentos!=5);
     }
 }
