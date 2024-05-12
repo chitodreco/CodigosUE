@@ -10,13 +10,13 @@ public class Entrada {
         Scanner scanner = new Scanner(System.in);
 
 
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 20; i++) {
             System.out.println("Introduzca la nota del alumno "+ (i+1) + ": ");
             double nota = scanner.nextDouble();
             notasAlumnos.add(nota);
         }
 
-        System.out.println("Las notas ingrasadas son: ");
+        System.out.println("Las notas de los alumnos son: ");
         for (int i = 0; i < notasAlumnos.size(); i++) {
             System.out.println("La nota alumno "+ (i+1) + " es: " +notasAlumnos.get(i) );
         }
@@ -37,16 +37,22 @@ public class Entrada {
         System.out.println("La nota más baja es: "+notaBaja);
         int contadorAprobados = 0;
         int contadorSuspensos = 0;
+        double totalNotas = 0;
+        double notaMedia = 0;
         for (double nota:notasAlumnos) {
             if (nota >= 5){
                 contadorAprobados++;
             } else {
                 contadorSuspensos++;
             }
+
+            totalNotas = totalNotas + nota;
+            notaMedia = totalNotas / notasAlumnos.size();
         }
+
         System.out.println("El número de aprobados es: "+contadorAprobados);
         System.out.println("El número de suspensos es: "+contadorSuspensos);
-
+        System.out.println("La media de las notas es: "+notaMedia);
 
     }
 }
