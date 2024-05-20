@@ -1,6 +1,6 @@
 package ejercicio1;
 
-import ejercicio1.utils.TipoDatoIncorrectoException;
+import ejercicio1.utils.*;
 
 import java.util.Scanner;
 

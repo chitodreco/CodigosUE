@@ -1,4 +1,4 @@
-package ejercicio1;
+package ejercicio1.utils;
 
 public class UltimoDigitoNoLetraException extends Exception {
     public UltimoDigitoNoLetraException(String message) {
