@@ -8,6 +8,8 @@ public class Entrada {
         File file = new File("src/resources/alumno.txt");
         FileReader fr = null;
         BufferedReader bf = null;
+        int notaAlta = 0;
+        String mejorExpediente = "null";
 
         try {
             fr = new FileReader(file);
@@ -18,10 +20,11 @@ public class Entrada {
 
                 String[] datos = linea.split(", ");
                 estudiantes.add(datos);
-                for (int i = 0; i < datos.length; i++) {
-
-                    System.out.println(datos[i]);
-
+                for (int i = 3; i < datos.length; i += 4) {
+                    if (Integer.valueOf(datos[i]) > notaAlta){
+                        notaAlta = Integer.valueOf(datos[i]);
+                        mejorExpediente = datos[i-3];
+                    }
                 }
 
             }
@@ -40,6 +43,8 @@ public class Entrada {
             }
         }
 
+        System.out.println(mejorExpediente);
+        System.out.println(notaAlta);
 
     }
 
