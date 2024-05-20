@@ -5,10 +5,10 @@ public class Entrada {
 
     public static void main(String[] args) {
 
-        Alumno alumno = new Alumno("Roberto","Panizo", 4.5, "12345678A");
-        Alumno alumno2 = new Alumno("Marcos","Flórez", 5.5, "9876543A");
-        Alumno alumno3 = new Alumno("Roberto","Flórez", 7, "22345678A");
-        Alumno alumno4 = new Alumno("Manuel","Sánchez", 4.5, "32345678A");
+        Alumno alumno = new Alumno("Roberto","Panizo", "12345678A");
+        Alumno alumno2 = new Alumno("Marcos","Flórez", "9876543A");
+        Alumno alumno3 = new Alumno("Roberto","Flórez", "22345678A");
+        Alumno alumno4 = new Alumno("Manuel","Sánchez", "32345678A");
 
         Colegio colegio = new Colegio();
         colegio.darAlta(alumno);
