@@ -1,5 +1,9 @@
 package ejercicio3;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -9,6 +13,21 @@ public class Estudiante {
     private int edad;
     private double nota1, nota2, nota3;
 
+    public static ArrayList<Estudiante> leerEstudiantes(String nombreFichero) throws IOException {
+
+        ArrayList<Estudiante> estudiantes = new ArrayList<>();
+        File file = new File(nombreFichero);
+        FileReader fr = new FileReader(file);
+        BufferedReader bf = new BufferedReader(fr);
+        String linea;
+        while ((linea = bf.readLine()) != null) {
+            String datos[] = linea.split(",");
+            Estudiante estudiante = new Estudiante(datos[0], Integer.valueOf(datos[1]), Double.valueOf(datos[2]),
+                    Double.valueOf(datos[3]), Double.valueOf(datos[4]));
+            estudiantes.add(estudiante);
+        }
+        return estudiantes;
+    }
 
     public double notaMedia(double nota1, double nota2, double nota3){
         double notaMedia = (nota1+nota2+nota3) / 3;
@@ -106,6 +125,15 @@ public class Estudiante {
         listaEstudiantes.add(estudiante2);
         estudiante.mostrarDatos();
         estudiante2.mostrarDatos();
+
+        try {
+            ArrayList<Estudiante> lista = leerEstudiantes("src/ejercicio3/resources/estudiantes.txt");
+            for (Estudiante item:lista) {
+                System.out.println(item);
+            }
+        } catch (IOException e){
+            System.out.println("Fichero no existe");
+        }
 
 
 
