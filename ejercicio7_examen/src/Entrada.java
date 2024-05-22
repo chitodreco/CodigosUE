@@ -11,9 +11,9 @@ public class Entrada {
 
         if(palabra.length() < 4){
             System.out.println(palabra.toUpperCase());
-        } else if ((palabra.length() >= 4) && (palabra.length()<8)) {
+        } else if (palabra.length()<8) {
             System.out.println(palabra.toLowerCase());            
-        } else if ((palabra.length() > 8) && (palabra.length() < 11)) {
+        } else if (palabra.length() < 11) {
             palabra = palabra.replaceAll("a","á")
                     .replaceAll("e","é").replaceAll("i","í")
                     .replaceAll("o","ó").replaceAll("u","ú");
