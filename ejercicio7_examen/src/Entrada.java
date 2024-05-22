@@ -14,30 +14,18 @@ public class Entrada {
         } else if ((palabra.length() >= 4) && (palabra.length()<8)) {
             System.out.println(palabra.toLowerCase());            
         } else if ((palabra.length() > 8) && (palabra.length() < 11)) {
-            String[] letras = palabra.split("");
-            for (String item:letras) {
-                if (item.equals("a")){
-                    item = "á";
-                } else if (item.equals("e")) {
-                    item = "é";
-                } else if (item.equals("i")) {
-                    item = "í";
-                } else if (item.equals("o")) {
-                    item = "ó";
-                } else if (item.equals("u")) {
-                    item = "ú";
-                }
-                    System.out.print(item);
-            }
+            palabra = palabra.replaceAll("a","á")
+                    .replaceAll("e","é").replaceAll("i","í")
+                    .replaceAll("o","ó").replaceAll("u","ú");
         } else {
-            String[] letras = palabra.split("");
-            for (int i = 0; i < palabra.length()-1; i++) {
-                palabra.
+            String palabraTransformada = "";
+            for (int i = palabra.length()-1; i >= 0; i--) {
+                palabraTransformada += palabra.charAt(i);
             }
 
-            }
         }
-
     }
+
+}
 
 
