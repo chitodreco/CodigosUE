@@ -22,6 +22,7 @@ public class Entrada {
             for (int i = palabra.length()-1; i >= 0; i--) {
                 palabraTransformada += palabra.charAt(i);
             }
+            System.out.println(palabraTransformada);
 
         }
     }
