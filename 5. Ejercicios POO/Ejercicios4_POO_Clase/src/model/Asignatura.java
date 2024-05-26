@@ -1,4 +1,6 @@
-//Desarrollar una clase llamada Asignatura que:
+package model;
+
+//Desarrollar una clase llamada model.Asignatura que:
 //
 //        - Tenga dos atributos private de tipo int (identificador) y de tipo double (calificación).
 //        - Tenga un constructor con un parámetro de tipo int.

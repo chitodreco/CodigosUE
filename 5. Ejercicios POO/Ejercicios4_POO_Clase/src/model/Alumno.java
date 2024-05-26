@@ -1,7 +1,9 @@
-//Desarrollar una clase llamada Alumno que:
+package model;
+
+//Desarrollar una clase llamada model.Alumno que:
 //
-//        - Tenga tres atributos private de tipo Asignatura.
-//        - Tenga un constructor con tres parámetros de tipo Asignatura que inicialice los tres atributos.
+//        - Tenga tres atributos private de tipo model.Asignatura.
+//        - Tenga un constructor con tres parámetros de tipo model.Asignatura que inicialice los tres atributos.
 //        - Tenga un constructor con tres parámetros de tipo int que inicialice los tres atributos.
 //        - Tenga un getter para cada uno de los atributos.
 public class Alumno {
