@@ -23,6 +23,14 @@
 //        - Calcular diámetro
 //        - Mostrar datos
 //        - Pulsa enter para continuar (teclado.next())
+//          - 3 Trabajar con cuadrados
+//        - Introduce base
+//        - Introduce altura
+//        - Que operación quieres hacer
+//        - Calcular área
+//        - Calcular perímetro
+//        - Mostrar datos
+//        - Pulsa enter para continuar (teclado.next())
 
 import java.util.Scanner;
 
@@ -60,8 +68,10 @@ public class Entrada {
                 switch (respuesta){
                     case 1:
                         System.out.println(triangulo.calcularArea(base, altura));
+                        break;
                     case 2:
                         System.out.println("La base es de "+base+", y la altura es de: "+altura);
+                        break;
                     default:
                         break;
                 }
@@ -75,10 +85,33 @@ public class Entrada {
                 switch (respuesta1){
                     case 1:
                         System.out.printf("El área del círculo es: %.2f\n",circulo.calcularArea(radio));
+                        break;
                     case 2:
                         System.out.printf("El diámetro del círculo es: %.2f\n",circulo.calcularDiametro(radio));
+                        break;
                     case 3:
                         System.out.println("El radio del círculo es: "+radio);
+                    default:
+                        break;
+                }
+                case 3:
+                System.out.println("Introduce la base: ");
+                int base1 = scanner.nextInt();
+                System.out.println("Introduce la altura: ");
+                int altura1 = scanner.nextInt();
+                System.out.println("¿Qué operación quieres realizar?");
+                System.out.println("1. Calcular área\n2. Calcular perímetro\n3. Mostrar datos\n" +
+                        "Pulsa Enter para continuar");
+                int respuesta2 = scanner.nextInt();
+                switch (respuesta2){
+                    case 1:
+                        System.out.printf("El área del cuadrado es: %.2f\n",cuadrado.calcularArea(base1,altura1));
+                        break;
+                    case 2:
+                        System.out.printf("El perímetro del cuadrado es: %.2f\n",cuadrado.calcularPerimtero(base1,altura1));
+                        break;
+                    case 3:
+                        System.out.println("La base del perímetro es: "+base1+", y la altura es: "+altura1);
                     default:
                         break;
                 }

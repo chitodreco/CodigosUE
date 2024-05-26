@@ -16,7 +16,16 @@ public class Cuadrado {
         return area;
     }
 
+    public double calcularArea(int base, int altura){
+        double area = base * altura;
+        return area;
+    }
+
     public double calcularPerimtero(){
+        double perimetro = (2*altura) + (2*base);
+        return perimetro;
+    }
+    public double calcularPerimtero(int base, int altura){
         double perimetro = (2*altura) + (2*base);
         return perimetro;
     }
