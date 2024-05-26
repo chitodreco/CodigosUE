@@ -14,6 +14,11 @@ public class Triangulo {
         return area;
     }
 
+    public double calcularArea(int base, int altura){
+        int area = (base * altura)/2;
+        return area;
+    }
+
     public Triangulo() {
     }
 
@@ -21,4 +26,6 @@ public class Triangulo {
         this.base = base;
         this.altura = altura;
     }
+
+
 }
