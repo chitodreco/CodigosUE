@@ -21,8 +21,7 @@ public class Entrada {
         Profesor alfredo = new Profesor();
 
         alfredo.ponerNotas(paco);
-        alfredo.calcularMedia(paco);
 
-        System.out.printf("Las notas de %s son: ",paco);
+        System.out.printf("La nota media del alumno es: %.2f\n",alfredo.calcularMedia(paco));
     }
 }
