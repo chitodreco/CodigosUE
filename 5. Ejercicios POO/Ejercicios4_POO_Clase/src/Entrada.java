@@ -23,6 +23,6 @@ public class Entrada {
         alfredo.ponerNotas(paco);
         alfredo.calcularMedia(paco);
 
-        System.out.printf("Las notas de %s son: "+paco);
+        System.out.printf("Las notas de %s son: ",paco);
     }
 }
