@@ -75,6 +75,7 @@ public class Entrada {
                     default:
                         break;
                 }
+                
             case 2:
                 System.out.println("Introduce radio: ");
                 double radio = scanner.nextInt();
