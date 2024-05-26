@@ -63,9 +63,25 @@ public class Entrada {
                     case 2:
                         System.out.println("La base es de "+base+", y la altura es de: "+altura);
                     default:
-                        continue ;
+                        break;
                 }
-
+            case 2:
+                System.out.println("Introduce radio: ");
+                double radio = scanner.nextInt();
+                System.out.println("¿Qué operación quieres realizar?");
+                System.out.println("1. Calcular área\n2. Calcular diámetro\n3. Mostrar datos\n" +
+                        "Pulsa Enter para continuar");
+                int respuesta1 = scanner.nextInt();
+                switch (respuesta1){
+                    case 1:
+                        System.out.printf("El área del círculo es: %.2f\n",circulo.calcularArea(radio));
+                    case 2:
+                        System.out.printf("El diámetro del círculo es: %.2f\n",circulo.calcularDiametro(radio));
+                    case 3:
+                        System.out.println("El radio del círculo es: "+radio);
+                    default:
+                        break;
+                }
         }
 
     }

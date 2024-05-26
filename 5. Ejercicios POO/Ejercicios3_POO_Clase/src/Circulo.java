@@ -14,7 +14,17 @@ public class Circulo {
         return  area;
     }
 
+    public double calcularArea(double radio){
+        double area = Math.PI * Math.pow(radio,2);
+        return  area;
+    }
+
     public double calcularDiametro(){
+        double diametro = 2*radio;
+        return diametro;
+    }
+
+    public double calcularDiametro(double radio){
         double diametro = 2*radio;
         return diametro;
     }
