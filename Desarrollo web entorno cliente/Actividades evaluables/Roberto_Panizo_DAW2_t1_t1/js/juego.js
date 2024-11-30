@@ -1,4 +1,4 @@
-// nombreJugador = prompt("Introduzca su nombre: ");
+let nombreJugador = prompt("Introduzca su nombre: ");
 let baraja = [];
 let palos = ["C", "T", "P", "D"];
 
@@ -24,6 +24,16 @@ for (let index = 0; index < palos.length; index++) {
   }
 }
 
+/* Bienvenida al jugador */
+let bienvenida = document.querySelector("h5");
+bienvenida.innerHTML =
+  `Bienvenido ${nombreJugador}` + ` a la mejor partida de BlackJack`;
+let nombreJugador2 = document.querySelector(".jugador");
+nombreJugador2.innerHTML = `${nombreJugador}`;
+let intervalo2 = setInterval(() => {
+  bienvenida.innerHTML = `La banca comienza primero`;
+}, 2000);
+
 // Barajar
 baraja = _.shuffle(baraja);
 console.log(baraja);
@@ -36,10 +46,12 @@ let intervalo = setInterval(() => {
   if (cuentaBanca < 17) {
     cuentaBanca += baraja.pop().valor;
     console.log(cuentaBanca);
+    let tiradaBanca = document.querySelector(".tiradaBanca");
+    tiradaBanca.innerHTML += `<img src="${baraja.imagen}" class="carta me-3 mb-1" width="100" height="130"></img>`;
   } else {
     clearInterval(intervalo);
   }
-}, 2000);
+}, 4000);
 
 /* while (cuentaBanca < 17){
 }

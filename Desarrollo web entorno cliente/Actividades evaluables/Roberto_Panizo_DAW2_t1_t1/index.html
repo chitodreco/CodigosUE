@@ -19,22 +19,34 @@
   </head>
   <body>
     <main>
+      <!-- Cabecera página -->
       <div
         class="navbar justify-content-center"
         style="background-color: rgb(13, 27, 13)"
       >
         <div class="cabecera">
-          <img src="./images/blackjack.jpg" width="400" height="200" />
+          <img src="./images/blackjack.jpg" width="400" height="150" />
         </div>
       </div>
+      <!-- Bienvenida al jugador -->
+      <h5 class="presentación mb-3 text-center mt-3"></h5>
+      <!-- Partida o tapete -->
       <div class="container mt-3">
+        <!-- Cabeceras jugador y banca -->
         <div class="row">
-          <div class="col-8">
-            <h2>Listado</h2>
+          <div class="col-8 mb-3 me-2">
+            <h2 class="jugador"></h2>
           </div>
-          <div class="col">
-            <h2>Listado</h2>
+          <div class="col mb-3">
+            <h2 class="banca">Banca</h2>
           </div>
+        </div>
+        <!-- Tiradas jugador y banca -->
+        <div class="row">
+          <!-- Tirada Jugador -->
+          <div class="col-8"></div>
+          <!-- Tirada Banca -->
+          <div class="col tiradaBanca"></div>
         </div>
       </div>
     </main>
