@@ -16,6 +16,7 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
   <body>
     <main>
@@ -34,8 +35,11 @@
       <div class="container mt-3">
         <!-- Cabeceras jugador y banca -->
         <div class="row">
-          <div class="col-8 mb-3 me-2">
+          <div class="col-8 mb-3 d-flex align-items-center text-center">
             <h2 class="jugador"></h2>
+            <h3 class="boton1"></h3>
+            <h3 class="boton2"></h3>
+            <h3 class="puntuacionJugador"></h3>
           </div>
           <div class="col mb-3">
             <h2 class="banca">Banca</h2>
@@ -44,7 +48,7 @@
         <!-- Tiradas jugador y banca -->
         <div class="row">
           <!-- Tirada Jugador -->
-          <div class="col-8"></div>
+          <div class="col-8 tiradaJugador"></div>
           <!-- Tirada Banca -->
           <div class="col tiradaBanca"></div>
         </div>

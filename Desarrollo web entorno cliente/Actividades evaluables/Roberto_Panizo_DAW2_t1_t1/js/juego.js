@@ -26,32 +26,96 @@ for (let index = 0; index < palos.length; index++) {
 
 /* Bienvenida al jugador */
 let bienvenida = document.querySelector("h5");
-bienvenida.innerHTML =
-  `Bienvenido ${nombreJugador}` + ` a la mejor partida de BlackJack`;
+bienvenida.innerHTML = `Bienvenido ${nombreJugador}` + ` a la partida`;
 let nombreJugador2 = document.querySelector(".jugador");
 nombreJugador2.innerHTML = `${nombreJugador}`;
-let intervalo2 = setInterval(() => {
-  bienvenida.innerHTML = `La banca comienza primero`;
-}, 2000);
 
 // Barajar
 baraja = _.shuffle(baraja);
 console.log(baraja);
 
-// Comienza el juego -> la banca comienza sacando carta cada 2"
+// Comienza el juego
 
 let cuentaBanca = 0;
 
 let intervalo = setInterval(() => {
+  /* Comienza jugando la banca */
   if (cuentaBanca < 17) {
-    cuentaBanca += baraja.pop().valor;
+    let cartaSacada = baraja.pop();
+    cuentaBanca += cartaSacada.valor;
+    let contadorBanca = document.querySelector(".banca");
+    contadorBanca.innerHTML = `Banca ${cuentaBanca}`;
     console.log(cuentaBanca);
+    console.log("Cuenta de la banca:", cuentaBanca);
+    console.log("Carta sacada:", cartaSacada);
     let tiradaBanca = document.querySelector(".tiradaBanca");
-    tiradaBanca.innerHTML += `<img src="${baraja.imagen}" class="carta me-3 mb-1" width="100" height="130"></img>`;
-  } else {
+    tiradaBanca.innerHTML += `<img src="${cartaSacada.imagen}" class="carta me-3 mb-1" width="100" height="130"></img>`;
+    /* Si saca = o superior a 22 pierde directamente */
+  } else if (cuentaBanca >= 22) {
+    Swal.fire({
+      position: "top-center",
+      icon: "success",
+      title: "La banca ha sacado más de 22 puntos, ¡Has ganado!",
+      showConfirmButton: false,
+      timer: 3000,
+    });
     clearInterval(intervalo);
+  } else {
+    /* Comienza la partida del jugador sacando los 2 botones: Pedir carta y Plantarse */
+    clearInterval(intervalo);
+    /* Configuración botón Pedir carta */
+    let sacarCarta = document.querySelector(".boton1");
+    sacarCarta.innerHTML =
+      '<button type="button" class="btn btn-primary ms-2">Pedir carta</button>';
+    let pedirCarta = document.querySelector(".boton1");
+    pedirCarta.addEventListener("click", (event) => {
+      let cartaJugador = baraja.pop();
+      cuentaJugador += cartaJugador.valor;
+      let contadorJugador = document.querySelector(".puntuacionJugador");
+      contadorJugador.innerHTML = ` ${cuentaJugador}`;
+      let lanceJugador = document.querySelector(".tiradaJugador");
+      lanceJugador.innerHTML += `<img src="${cartaJugador.imagen}" class="carta me-3 mb-1" width="100" height="130"></img>`;
+      if (cuentaJugador >= 22) {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Has obtenido 22 puntos o más, ¡has perdido!",
+        });
+        sacarCarta.innerHTML = "";
+        plantarse.innerHTML = "";
+      }
+    });
+    /* Configuración botón Plantarse */
+    let plantarse = document.querySelector(".boton2");
+    plantarse.innerHTML =
+      '<button type="button" class="btn btn-success ms-2 me-2">Plantarse</button>';
+    plantarse.addEventListener("click", (event) => {
+      if (cuentaJugador == 21 && cuentaBanca == 21) {
+        Swal.fire("¡Empate!");
+        plantarse.innerHTML = "";
+        sacarCarta.innerHTML = "";
+      } else if (cuentaJugador > cuentaBanca) {
+        Swal.fire({
+          title: "¡Has ganado!",
+          imageUrl:
+            "https://de2.sportal365images.com/process/smp-betway-images/blog.betway.com.es/20032024/aa295e20-3e35-4dd9-9e0a-e6c775642ee9.jpg",
+          imageWidth: 400,
+          imageHeight: 200,
+          imageAlt: "Custom image",
+        });
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "¡Has perdido!",
+        });
+        plantarse.innerHTML = "";
+      }
+    });
   }
-}, 4000);
+}, 3000);
+
+let cuentaJugador = 0;
 
 /* while (cuentaBanca < 17){
 }
