@@ -1,0 +1,113 @@
+<!-- Realiza una página web en JS que permita mostrar una serie de productos cargados
+externamente desde un JSON. La url de carga será la siguiente:
+https://dummyjson.com/products
+Para el maquetado de la web tendrá que tener las siguientes secciones:
+- Parte superior donde se podrán seleccionar los filtros de búsqueda: precio mínimo,
+categoría y marca, además de un botón para poder aplicar el filtro.
+- Parte central dividido en dos partes:
+o Parte resultados: donde se mostrarán tantas cartas como productos del api
+cumplan el filtro de búsqueda. En las cartas deberá de mostrarse además de la
+imagen, el precio y la categoría, un botón con el texto añadir a carrito. En el caso
+de pulsarlo, el producto se añadirá al carrito y se actualizará la lista de la parte
+derecha
+o Parte carrito: donde se mostrarán todos los productos que se van añadido al
+producto. Al final de la lista aparecerá un botón comprar donde al pulsarlo
+aparecerá un mensaje de confirmación con el siguiente mensaje: vas a realizar
+una compra por valor de XXX. ¿Estás seguro? En el caso de púlsar aceptar vaciará
+el carrito
+Además de todas las características mencionadas, se valorará el uso de librerías externas para
+el uso de animaciones y carga de diálogos:
+- https://sweetalert2.github.io
+- https://animate.style
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <div class="container mt-4">
+        <div>
+          <h2>Tienda</h2>
+        </div>
+        <div class="d-flex col-9 mt-4">
+          <div class="d-flex">
+            <div class="me-4">
+              <label for="inputMarca" class="form-label">Marca</label>
+              <select class="form-select" id="inputMarca">
+                <option value="todas">Todas</option>
+              </select>
+            </div>
+            <div class="me-4">
+              <label for="inputCategoria" class="form-label">Categoría</label>
+              <select class="form-select" id="inputCategoria">
+                <option value="todas">Todas</option>
+              </select>
+            </div>
+            <div class="me-4">
+              <label for="inputPrecio" class="form-label">Precio mínimo</label>
+              <input type="number" class="form-control" id="inputPrecio" />
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3" id="buscar">
+          Buscar
+        </button>
+        <button type="reset" class="btn btn-secondary mt-3" id="reset">
+          Limpiar búsqueda
+        </button>
+      </div>
+    </header>
+
+    <main class="container mt-5">
+      <div class="col-12" style="background-color: black; opacity: 7%">
+        hola
+      </div>
+      <div class="row">
+        <div class="col-8 mt-4">
+          <h4 class="text-center">Productos</h4>
+          <div class="row row-cols-1 row-cols-md-3 g-4 mt-3"></div>
+        </div>
+        <div class="col-1" style="background-color: black; opacity: 7%"></div>
+        <div class="col-3 mt-4">
+          <h4 class="text-center">Cesta <i class="bi bi-cart"></i></h4>
+          <div class="row row-cols-1 mt-3" id="carrito"></div>
+          <div class="d-flex">
+            <h4 id="total"></h4>
+          </div>
+          <div id="comprar"></div>
+        </div>
+      </div>
+    </main>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
