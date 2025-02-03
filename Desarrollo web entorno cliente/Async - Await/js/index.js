@@ -1,6 +1,4 @@
-let url = "https://dummyjson.com/products";
-
-fetch(url);
+let boton = document.querySelector("#botonGuardar");
 
 // 1. lanzo la petición al server
 // 2. con el then analizo la respuesta
@@ -24,6 +22,14 @@ async function obtenerUsuarios(url) {
   console.log(json.users);
 }
 
-obtenerProductos();
-obtenerUsuarios('https://dummyjson.com/users');
+boton.addEventListener("click", (e) => {
+  let objeto = {
+    nombre: "Borja",
+    apellido: "Martin",
+    asignaturas: ["DAWEC", "PRO", "PMDM", "AD", "LM"],
+  };
+  localStorage.setItem("dato", JSON.stringify(objeto));
+});
 
+// obtenerProductos('https://dummyjson.com/products');
+// obtenerUsuarios('https://dummyjson.com/users');
