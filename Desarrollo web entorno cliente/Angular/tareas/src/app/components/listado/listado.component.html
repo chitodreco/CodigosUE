@@ -1,8 +1,30 @@
-<ul class="list-group">
-  <li class="list-group-item">JavaScript</li>
-  <li class="list-group-item">TypeScript</li>
-  <li class="list-group-item">Angular</li>
-  <li class="list-group-item">React</li>
-  <li class="list-group-item">Vue</li>
-  <li class="list-group-item">Autentificación</li>
-</ul>
+<h1>Conocimientos de {{ nombre }}</h1>
+<img [src]="url" />
+
+<div class="row mt-4">
+  <div class="col">
+    <h2>Formulario</h2>
+    <input
+    
+      class="form-control mb-3"
+      placeholder="Introduce conocimiento"
+      #inputNombre
+      [(ngModel)]="nombreConocimiento"
+    />
+    <select
+      class="form-select mb-3"
+      #inputNivel
+      [(ngModel)]="nivelConocimiento"
+    >
+      <option value="1">Bajo</option>
+      <option value="2">Medio</option>
+      <option value="3">Alto</option>
+    </select>
+    <button class="btn btn-primary mb-3" (click)="guardarElemento()">
+      Guardar
+    </button>
+  </div>
+  <div class="col">
+    <h2>Listado de conocimientos</h2>
+  </div>
+</div>
