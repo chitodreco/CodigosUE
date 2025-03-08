@@ -5,11 +5,15 @@ import { BrowserModule, provideClientHydration, withEventReplay } from '@angular
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListadoComponent } from './components/listado/listado.component';
+import { AsignaturasComponent } from './components/asignaturas/asignaturas.component';
+import { TecnologiasComponent } from './components/tecnologias/tecnologias.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListadoComponent
+    ListadoComponent,
+    AsignaturasComponent,
+    TecnologiasComponent
   ],
   imports: [
     BrowserModule,
