@@ -1,0 +1,14 @@
+<div class="row row-cols-1 row-cols-md-4 g-4">
+    <div class="col" *ngFor="let item of recetas">
+      <div class="card">
+        <a class="btn btn-outline-danger position-absolute top-0 end-0 m-2"><i class="bi bi-heart"></i>
+        </a>
+        <img src= {{item.image}} class="card-img-top">
+        <div class="card-body">
+          <h4 class="card-title">{{item.name}}</h4>
+          <h6>Preparación: {{item.prepTimeMinutes}} minutos</h6>
+          <button class="btn btn-primary mt-3" [routerLink]="['/detalle', item.id]">Ver receta</button>
+        </div>
+      </div>
+    </div>
+  </div>
