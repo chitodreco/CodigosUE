@@ -8,6 +8,7 @@ import { RecetasComponent } from './components/recetas/recetas.component';
 import { ErrorComponent } from './components/error/error.component';
 import { DetalleComponent } from './components/detalle/detalle.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FavoritasComponent } from './components/favoritas/favoritas.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     RecetasComponent,
     ErrorComponent,
-    DetalleComponent
+    DetalleComponent,
+    FavoritasComponent
   ],
   imports: [
     BrowserModule,

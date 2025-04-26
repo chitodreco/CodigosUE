@@ -1,3 +1,42 @@
 <div class="container">
-    <h2></h2>
+  <h2 class="mb-3">Detalles de la receta</h2>
+  <div *ngIf="receta">
+    <div class="card mb-3" style="max-width: 540px">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img
+            [src]="receta.image"
+            alt="{{ receta.name }}"
+            class="img-fluid mb-3"
+          />
+          <a class="btn btn-outline-danger position-relative ms-2" (click)="agregarAFavoritas()">
+            <i class="bi bi-heart"></i> Añadir a favorita
+          </a>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{ receta.name }}</h5>
+            <h6>Modo preparación:</h6>
+
+            <p class="card-text">
+              {{ receta.instructions }}
+            </p>
+            <h6>Ingredientes:</h6>
+            <ul>
+              <li *ngFor="let ingredient of receta.ingredients">
+                {{ ingredient }}
+              </li>
+            </ul>
+
+            <p class="card-text">
+              <small class="text-body-secondary"
+                >Preparación: {{ receta.prepTimeMinutes }} minutos</small
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-primary mb-4" (click)="volverARecetas()">Volver a recetas</button>
 </div>

@@ -1,0 +1,21 @@
+<div class="container mt-5">
+    <h2>Recetas Favoritas</h2>
+    <div *ngIf="favoritas.length > 0; else noFavoritas">
+      <div class="row row-cols-1 row-cols-md-4 g-4 mt-2">
+        <div class="col" *ngFor="let receta of favoritas">
+          <div class="card">
+            <img [src]="receta.image" class="card-img-top" alt="{{ receta.name }}">
+            <div class="card-body">
+              <h5 class="card-title">{{ receta.name }}</h5>
+              <button class="btn btn-danger" (click)="eliminarFavorita(receta.id)">
+                Eliminar de favoritas
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ng-template #noFavoritas>
+      <p>No tienes recetas favoritas.</p>
+    </ng-template>
+  </div>
