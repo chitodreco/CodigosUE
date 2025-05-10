@@ -39,3 +39,6 @@ export default function Contador() {
     </div>
   );
 }
+
+
+/* Poner un elemento que haga de input para indicar el valor del contador que se resetea. Si pones 8 se resetea a 8*/
